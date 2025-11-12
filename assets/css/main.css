@@ -1,22 +1,23 @@
 /*--------------------------------------------------------------
-# BINI MDS - Professional Edition
-# Author: BootstrapMade (Enhanced by ATman)
-# License: https://bootstrapmade.com/license/
+# BINI MDS - Professional Edition (Enhanced Modern Look)
+# Author: BootstrapMade (Refined by ATman)
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Root Variables
 --------------------------------------------------------------*/
 :root {
-  --default-font: "Roboto", system-ui, sans-serif;
+  --default-font: "Inter", "Roboto", system-ui, sans-serif;
   --heading-font: "Poppins", sans-serif;
-  --background-color: #ffffff;
+  --background-color: #fdfdfd;
   --default-color: #555;
   --heading-color: #0d2d44;
   --accent-color: #007bff;
   --accent-dark: #0056b3;
-  --light-bg: #f8f9fa;
+  --light-bg: #f8f9fb;
   --contrast-color: #ffffff;
+  --border-radius: 12px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 /*--------------------------------------------------------------
@@ -30,52 +31,58 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
-  line-height: 1.6;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 a:hover {
   color: var(--accent-dark);
+  transform: translateY(-1px);
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+  font-weight: 600;
 }
 
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 .header {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow);
   padding: 15px 0;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 0;
   z-index: 997;
 }
 
 .header .logo h1 {
-  font-size: 28px;
-  margin: 0;
+  font-size: 30px;
   font-weight: 700;
   color: var(--heading-color);
+  letter-spacing: 0.5px;
 }
 
 .header .btn-getstarted {
   color: var(--contrast-color);
   background: var(--accent-color);
-  padding: 8px 22px;
-  border-radius: 6px;
+  padding: 10px 25px;
+  border-radius: var(--border-radius);
   font-size: 15px;
-  margin-left: 20px;
-  transition: background 0.3s ease;
+  margin-left: 25px;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 .header .btn-getstarted:hover {
   background: var(--accent-dark);
+  transform: translateY(-2px);
 }
 
 /*--------------------------------------------------------------
@@ -86,12 +93,14 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
 }
 .navmenu a {
   color: var(--heading-color);
   padding: 10px 15px;
   font-weight: 500;
   font-size: 15px;
+  transition: color 0.3s, background 0.3s;
 }
 .navmenu a:hover,
 .navmenu .active {
@@ -100,13 +109,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-nav-toggle {
   display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--heading-color);
 }
 
 @media (max-width: 991px) {
   .mobile-nav-toggle {
     display: block;
-    font-size: 28px;
-    cursor: pointer;
   }
   .navmenu ul {
     display: none;
@@ -115,9 +125,10 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 65px;
     right: 20px;
-    width: 200px;
-    padding: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
   }
   .navmenu ul.show {
     display: flex;
@@ -135,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   color: #fff;
   text-align: center;
-  background: linear-gradient(to bottom right, rgba(0, 123, 255, 0.7), rgba(0, 56, 128, 0.7));
+  background: linear-gradient(to bottom right, #007bff, #004a9f);
   overflow: hidden;
 }
 
@@ -146,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  opacity: 0.6;
+  opacity: 0.45;
 }
 
 #hero .container {
@@ -155,45 +166,56 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h1 {
-  font-size: 48px;
+  font-size: 52px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
-
 #hero p {
   font-size: 18px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-inline: auto;
+  opacity: 0.9;
 }
 
 #hero .btn-primary {
   background: var(--accent-color);
   border: none;
-  padding: 12px 28px;
+  padding: 14px 32px;
   font-size: 16px;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: background 0.3s, transform 0.2s;
 }
 #hero .btn-primary:hover {
   background: var(--accent-dark);
+  transform: translateY(-3px);
 }
 
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
 .section {
-  padding: 80px 0;
+  padding: 90px 0;
+  background-color: var(--light-bg);
+}
+.section:nth-child(even) {
+  background-color: #fff;
 }
 .section-title {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 .section-title h2 {
   font-weight: 700;
+  font-size: 32px;
   color: var(--heading-color);
 }
 .section-title p {
   color: var(--default-color);
-  max-width: 700px;
+  max-width: 720px;
   margin: 10px auto 0;
+  opacity: 0.8;
 }
 
 /*--------------------------------------------------------------
@@ -201,23 +223,25 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 .service-item {
   background: #fff;
-  border-radius: 12px;
-  padding: 40px 20px;
+  border-radius: var(--border-radius);
+  padding: 40px 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
   text-align: center;
 }
 .service-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 .service-item .icon {
+  font-size: 38px;
   color: var(--accent-color);
   margin-bottom: 20px;
 }
 .service-item h3 {
   font-weight: 600;
   margin-bottom: 10px;
+  font-size: 18px;
 }
 
 /*--------------------------------------------------------------
@@ -226,10 +250,10 @@ h1, h2, h3, h4, h5, h6 {
 .contact .info-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 .contact .info-item i {
-  font-size: 26px;
+  font-size: 28px;
   margin-right: 15px;
   color: var(--accent-color);
 }
@@ -241,20 +265,29 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-size: 15px;
 }
+
 .php-email-form .form-control {
-  border-radius: 8px;
-  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  transition: border 0.3s, box-shadow 0.3s;
 }
+.php-email-form .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.15);
+}
+
 .php-email-form button {
   background: var(--accent-color);
   border: none;
   color: #fff;
-  padding: 12px 25px;
-  border-radius: 6px;
-  transition: background 0.3s;
+  padding: 12px 30px;
+  border-radius: var(--border-radius);
+  transition: background 0.3s, transform 0.2s;
 }
 .php-email-form button:hover {
   background: var(--accent-dark);
+  transform: translateY(-2px);
 }
 
 /*--------------------------------------------------------------
@@ -265,18 +298,19 @@ h1, h2, h3, h4, h5, h6 {
   color: #444;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   text-align: center;
-  padding: 30px 0;
+  padding: 40px 0;
   font-size: 15px;
 }
 
 .footer .social-links a {
-  font-size: 20px;
+  font-size: 22px;
   color: var(--accent-color);
-  margin: 0 8px;
-  transition: color 0.3s;
+  margin: 0 10px;
+  transition: color 0.3s, transform 0.2s;
 }
 .footer .social-links a:hover {
   color: var(--accent-dark);
+  transform: scale(1.2);
 }
 
 /*--------------------------------------------------------------
@@ -295,8 +329,13 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   border-radius: 50%;
   z-index: 999;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 #scroll-top:hover {
   background: var(--accent-dark);
+  transform: translateY(-3px);
+}
+
+section {
+  scroll-margin-top: 80px;
 }

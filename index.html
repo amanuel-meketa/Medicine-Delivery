@@ -27,7 +27,9 @@
   <!-- ======= Header ======= -->
   <header class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="#hero" class="logo d-flex align-items-center"><h1>BINI MDS</h1></a>
+      <a href="#hero" class="logo d-flex align-items-center">
+        <h1>BINI MDS</h1>
+      </a>
       <nav class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
@@ -37,7 +39,7 @@
         </ul>
         <i class="mobile-nav-toggle bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted" href="#about">Order Now</a>
+      <a class="btn-getstarted" href="#services">Order Now</a>
     </div>
   </header>
 
@@ -51,20 +53,18 @@
     </div>
   </section>
 
-<!-- ======= About Section ======= -->
-<section id="about" class="about section py-5">
-  <div class="container section-title text-center" data-aos="fade-up">
-    <h2>About Us</h2></br>
-    <p>BINI MDS is Boston’s trusted medicine delivery service, committed to providing fast, safe, and reliable access to essential medications. We understand that timely delivery of medicines is crucial for maintaining health and well-being, which is why our team is dedicated to ensuring that prescriptions and over-the-counter medicines reach our customers promptly and securely.</p></br></br>
-    <p>Our mission is to make healthcare more accessible, convenient, and dependable. Whether it’s routine prescriptions, urgent medical needs, or everyday wellness essentials, BINI MDS is here to support you and your loved ones with professional and caring service, 24/7.</p>
-  </div>
-</section>
-
-
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about section py-5">
+    <div class="container section-title text-center" data-aos="fade-up">
+      <h2>About Us</h2>
+      <p>BINI MDS is Boston’s trusted medicine delivery service, committed to providing fast, safe, and reliable access to essential medications. We understand that timely delivery of medicines is crucial for maintaining health and well-being, which is why our team ensures prescriptions and over-the-counter medicines reach our customers promptly and securely.</p>
+      <p class="mt-4">Our mission is to make healthcare more accessible, convenient, and dependable. Whether it’s routine prescriptions, urgent medical needs, or everyday wellness essentials, BINI MDS is here for you 24/7.</p>
+    </div>
+  </section>
 
   <!-- ======= Services ======= -->
-  <section id="services" class="section bg-light">
-    <div class="container section-title" data-aos="fade-up">
+  <section id="services" class="section bg-light py-5">
+    <div class="container section-title text-center" data-aos="fade-up">
       <h2>Our Services</h2>
       <p>Comprehensive medicine delivery solutions designed for your convenience and safety.</p>
     </div>
@@ -72,22 +72,22 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-item">
-            <div class="icon"><i class="bi bi-prescription display-5"></i></div>
+          <div class="service-item p-4 text-center bg-white rounded shadow-sm">
+            <div class="icon mb-3"><i class="bi bi-prescription display-5 text-primary"></i></div>
             <h3>Prescription Delivery</h3>
             <p>Fast delivery of prescribed medicines from trusted pharmacies to your door.</p>
           </div>
         </div>
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-item">
-            <div class="icon"><i class="bi bi-heart-pulse display-5"></i></div>
+          <div class="service-item p-4 text-center bg-white rounded shadow-sm">
+            <div class="icon mb-3"><i class="bi bi-heart-pulse display-5 text-danger"></i></div>
             <h3>OTC Medicines</h3>
             <p>Essential over-the-counter medicines delivered without leaving home.</p>
           </div>
         </div>
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-item">
-            <div class="icon"><i class="bi bi-truck display-5"></i></div>
+          <div class="service-item p-4 text-center bg-white rounded shadow-sm">
+            <div class="icon mb-3"><i class="bi bi-truck display-5 text-success"></i></div>
             <h3>Emergency Delivery</h3>
             <p>Rapid delivery within hours for urgent medical needs.</p>
           </div>
@@ -96,9 +96,9 @@
     </div>
   </section>
 
-  <!-- ======= Contact ======= -->
-  <section id="contact" class="section">
-    <div class="container section-title" data-aos="fade-up">
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="section py-5">
+    <div class="container section-title text-center" data-aos="fade-up">
       <h2>Contact Us</h2>
       <p>We’re available 24/7 in Boston and Cambridge for support and inquiries.</p>
     </div>
@@ -118,7 +118,7 @@
               <div class="col-md-6"><input type="email" class="form-control" placeholder="Your Email" required></div>
               <div class="col-12"><input type="text" class="form-control" placeholder="Subject" required></div>
               <div class="col-12"><textarea class="form-control" rows="5" placeholder="Message" required></textarea></div>
-              <div class="col-12 text-center"><button type="submit">Send Message</button></div>
+              <div class="col-12 text-center"><button type="submit" class="btn btn-primary">Send Message</button></div>
             </div>
           </form>
         </div>
@@ -127,13 +127,13 @@
   </section>
 
   <!-- ======= Footer ======= -->
-  <footer class="footer">
+  <footer class="footer py-4 bg-dark text-white text-center">
     <div class="container">
       <p>© 2025 <strong>BINI MDS</strong>. All Rights Reserved.</p>
-      <div class="social-links">
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-twitter"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>
+      <div class="social-links mt-3">
+        <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
       </div>
     </div>
   </footer>
@@ -144,8 +144,24 @@
   <!-- Vendor JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Navigation Toggle Script -->
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileToggle = document.querySelector('.mobile-nav-toggle');
+      const navMenu = document.querySelector('.navmenu ul');
+      const body = document.body;
+
+      mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('navmenu-active');
+        mobileToggle.classList.toggle('bi-list');
+        mobileToggle.classList.toggle('bi-x');
+        body.classList.toggle('nav-open');
+      });
+    });
+
     AOS.init({ duration: 800, once: true });
   </script>
+
 </body>
 </html>

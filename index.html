@@ -18,164 +18,263 @@
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
   <!-- Main CSS -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    :target::before { content: ""; display: block; height: 80px; margin-top: -80px; visibility: hidden; }
+    section { scroll-margin-top: 80px; }
+
+    /* Floating medical icons animation */
+    .floating-icon { position: absolute; animation: floatIcon 15s ease-in-out infinite; }
+    .floating-icon:nth-child(2) { animation-duration: 18s; }
+    .floating-icon:nth-child(3) { animation-duration: 12s; }
+    @keyframes floatIcon {
+      0% { transform: translateY(0) translateX(0) rotate(0deg); opacity:0.6; }
+      50% { transform: translateY(-20px) translateX(15px) rotate(15deg); opacity:0.85; }
+      100% { transform: translateY(0) translateX(0) rotate(0deg); opacity:0.6; }
+    }
+
+    /* Glass-style CTA button */
+    .btn-glass {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+    .btn-glass:hover {
+      background: rgba(255,255,255,0.35);
+      color: #007bff;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    /* Hero heading responsive */
+    #hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+    #hero p { font-size: clamp(1rem, 2.5vw, 1.25rem); }
+
+    /* Mobile nav menu */
+    .navmenu ul { list-style: none; margin:0; padding:0; display:flex; gap:1.5rem; }
+    .navmenu ul li a { text-decoration:none; color:#333; font-weight:500; }
+    .navmenu ul.show { display:block; position:absolute; top:80px; left:0; width:100%; background:#fff; padding:1rem 0; }
+    .mobile-nav-toggle { font-size:1.5rem; cursor:pointer; display:none; }
+    @media(max-width:992px) {
+      .navmenu ul { display:none; flex-direction:column; }
+      .mobile-nav-toggle { display:block; }
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
- <header class="header">
-  <div class="container d-flex align-items-center justify-content-between">
-    <div class="logo">
-      <h1><a href="#">BINI MDS</a></h1>
+  <header class="header py-3 bg-white shadow-sm fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <h1 class="m-0"><a href="#">BINI MDS</a></h1>
+      </div>
+
+      <nav class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#order" class="btn btn-glass px-3 py-2">Order Now</a></li>
+        </ul>
+      </nav>
+
+      <i class="mobile-nav-toggle bi bi-list"></i>
     </div>
-
-    <nav class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <i class="mobile-nav-toggle bi bi-list"></i>
-  </div>
-</header>
+  </header>
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <img src="assets/img/hero-bg-abstract.jpg" alt="Hero background">
-    <div class="container text-center" data-aos="zoom-in">
-      <h1>Fast & Reliable Medicine Delivery</h1>
-      <p>Delivering your prescriptions 24/7 across Boston</p>
-      <a href="#services" class="btn btn-primary mt-3">Order Now</a>
-    </div>
-  </section>
+<section id="hero" class="d-flex align-items-center justify-content-center position-relative" style="height:100vh; overflow:hidden; background: linear-gradient(135deg, #007bff, #00c6ff);">
+  <div class="hero-icons position-absolute w-100 h-100" style="top:0; left:0; z-index:0; overflow:hidden;">
+    <i class="bi bi-heart-pulse-fill floating-icon" style="top:10%; left:15%; color:rgba(255,255,255,0.2); font-size:48px;"></i>
+    <i class="bi bi-prescription floating-icon" style="top:50%; left:80%; color:rgba(255,255,255,0.15); font-size:60px;"></i>
+    <i class="bi bi-truck floating-icon" style="top:75%; left:30%; color:rgba(255,255,255,0.18); font-size:50px;"></i>
+  </div>
+  <div class="container text-center text-white position-relative" data-aos="fade-up">
+    <h1 class="display-3 fw-bold mb-3" style="font-family: 'Poppins', sans-serif; text-shadow:0 4px 25px rgba(0,0,0,0.3);">
+      Fast & Reliable Medicine Delivery
+    </h1>
+    <p class="lead mb-4" style="font-size:1.25rem; max-width:700px; margin:auto; line-height:1.6; text-shadow:0 2px 12px rgba(0,0,0,0.25);">
+      Bringing prescriptions and over-the-counter medicines safely and promptly to your doorstep, <strong>24/7 in Boston</strong>.
+    </p>
+    <a href="#order" class="btn btn-glass btn-lg px-5 py-3 fw-bold">Order Now</a>
+  </div>
+</section>
 
   <!-- ======= About Section ======= -->
-  <section id="about" class="about section py-5">
-    <div class="container section-title text-center" data-aos="fade-up">
-      <h2>About Us</h2>
-      <p>BINI MDS is Boston’s trusted medicine delivery service, committed to providing fast, safe, and reliable access to essential medications. We understand that timely delivery of medicines is crucial for maintaining health and well-being, which is why our team ensures prescriptions and over-the-counter medicines reach our customers promptly and securely.</p>
-      <p class="mt-4">Our mission is to make healthcare more accessible, convenient, and dependable. Whether it’s routine prescriptions, urgent medical needs, or everyday wellness essentials, BINI MDS is here for you 24/7.</p>
+<section id="about" class="section py-5" style="background: #f5f8fa;">
+  <div class="container" data-aos="fade-up">
+    <div class="row gy-4 justify-content-center">
+      <div class="col-lg-10 col-md-12">
+        <div class="service-item p-5 text-center bg-white rounded shadow-sm" data-aos="fade-up" data-aos-delay="100" style="border-left: 6px solid #007bff;">
+          <h3 class="mb-3">About BINI MDS</h3>
+          <p><strong>BINI MDS</strong> is Boston’s trusted medicine delivery partner, committed to providing <strong>fast, safe, and reliable access</strong> to prescriptions and over-the-counter medicines.</p>
+          <p class="mt-3">Our professional team combines <strong>care, reliability, and convenience</strong>, so you can focus on your health and well-being.</p>
+          <p class="mt-3">Our mission: make healthcare <strong>accessible, stress-free, and dependable</strong> for everyone, <strong>24/7</strong>.</p>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ======= Services ======= -->
-  <section id="services" class="section bg-light py-5">
-    <div class="container section-title text-center" data-aos="fade-up">
-      <h2>Our Services</h2>
-      <p>Comprehensive medicine delivery solutions designed for your convenience and safety.</p>
-    </div>
-
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-item p-4 text-center bg-white rounded shadow-sm">
-            <div class="icon mb-3"><i class="bi bi-prescription display-5 text-primary"></i></div>
-            <h3>Prescription Delivery</h3>
-            <p>Fast delivery of prescribed medicines from trusted pharmacies to your door.</p>
-          </div>
+<section id="services" class="section bg-light py-5">
+  <div class="container text-center" data-aos="fade-up">
+    <h2>Our Services</h2>
+    <p>Comprehensive medicine delivery solutions designed for your convenience and safety.</p>
+  </div>
+  <div class="container mt-4">
+    <div class="row gy-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item p-4 text-center bg-white rounded shadow-sm">
+          <div class="icon mb-3"><i class="bi bi-prescription display-5 text-primary"></i></div>
+          <h3>Prescription Delivery</h3>
+          <p>Fast delivery of prescribed medicines from trusted pharmacies.</p>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-item p-4 text-center bg-white rounded shadow-sm">
-            <div class="icon mb-3"><i class="bi bi-heart-pulse display-5 text-danger"></i></div>
-            <h3>OTC Medicines</h3>
-            <p>Essential over-the-counter medicines delivered without leaving home.</p>
-          </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item p-4 text-center bg-white rounded shadow-sm">
+          <div class="icon mb-3"><i class="bi bi-heart-pulse display-5 text-danger"></i></div>
+          <h3>OTC Medicines</h3>
+          <p>Essential over-the-counter medicines delivered to your home.</p>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-item p-4 text-center bg-white rounded shadow-sm">
-            <div class="icon mb-3"><i class="bi bi-truck display-5 text-success"></i></div>
-            <h3>Emergency Delivery</h3>
-            <p>Rapid delivery within hours for urgent medical needs.</p>
-          </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item p-4 text-center bg-white rounded shadow-sm">
+          <div class="icon mb-3"><i class="bi bi-truck display-5 text-success"></i></div>
+          <h3>Emergency Delivery</h3>
+          <p>Rapid delivery within hours for urgent medical needs.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ======= Contact Section ======= -->
-  <section id="contact" class="section py-5">
-    <div class="container section-title text-center" data-aos="fade-up">
-      <h2>Contact Us</h2>
-      <p>We’re available 24/7 in Boston for support and inquiries.</p>
-    </div>
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="section py-5" style="background:#f5f8fa;">
+  <div class="container text-center" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <p>We’re available 24/7 in Boston for support and inquiries.</p>
+  </div>
 
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-md-4">
-          <div class="info-item"><i class="bi bi-geo-alt"></i><div><h3>Location</h3><p>Boston, MA</p></div></div>
-          <div class="info-item"><i class="bi bi-telephone"></i><div><h3>Call</h3><p>+1 (555) 123-4567</p></div></div>
-          <div class="info-item"><i class="bi bi-envelope"></i><div><h3>Email</h3><p>support@binimds.com</p></div></div>
+  <div class="container mt-4">
+    <div class="row justify-content-center text-center gy-4">
+
+      <!-- Location Card -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="info-item p-4 bg-white rounded shadow-sm">
+          <i class="bi bi-geo-alt fs-2 mb-2 text-primary"></i>
+          <h5>Location</h5>
+          <p>Boston, MA</p>
         </div>
+      </div>
 
-        <div class="col-md-8">
-          <form class="php-email-form">
-            <div class="row gy-3">
-              <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name" required></div>
-              <div class="col-md-6"><input type="email" class="form-control" placeholder="Your Email" required></div>
-              <div class="col-12"><input type="text" class="form-control" placeholder="Subject" required></div>
-              <div class="col-12"><textarea class="form-control" rows="5" placeholder="Message" required></textarea></div>
-              <div class="col-12 text-center"><button type="submit" class="btn btn-primary">Send Message</button></div>
+      <!-- Call Card -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="info-item p-4 bg-white rounded shadow-sm">
+          <i class="bi bi-telephone fs-2 mb-2 text-success"></i>
+          <h5>Call</h5>
+          <p>+1 (555) 123-4567</p>
+        </div>
+      </div>
+
+      <!-- Email Card -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="info-item p-4 bg-white rounded shadow-sm">
+          <i class="bi bi-envelope fs-2 mb-2 text-danger"></i>
+          <h5>Email</h5>
+          <p>support@binimds.com</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ======= Place Your Order Section ======= -->
+<section id="order" class="section py-5 bg-white">
+  <div class="container text-center" data-aos="fade-up">
+    <h2>Place Your Order</h2>
+    <p>Fill out the form below and we’ll deliver your medicines safely and quickly.</p>
+  </div>
+  <div class="container mt-4">
+    <div class="row gy-4 justify-content-center">
+      <div class="col-lg-8 col-md-12">
+        <form class="php-email-form p-4 bg-white rounded shadow-sm" style="border-top:4px solid #28a745;">
+          <div class="row gy-3">
+            <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Your Full Name" required></div>
+            <div class="col-md-6"><input type="tel" name="phone" class="form-control" placeholder="Phone Number" required></div>
+            <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Email Address" required></div>
+            <div class="col-md-6"><input type="text" name="address" class="form-control" placeholder="Delivery Address" required></div>
+            <div class="col-12"><textarea name="medicine-details" rows="3" class="form-control" placeholder="Medicine Names / Details" required></textarea></div>
+            <div class="col-md-6"><input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" required></div>
+            <div class="col-md-6"><input type="datetime-local" name="preferred-time" class="form-control"></div>
+            <div class="col-12"><textarea name="notes" rows="2" class="form-control" placeholder="Additional Notes (Optional)"></textarea></div>
+            <div class="col-12 text-center">
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-hero btn-lg px-5">Place Order</button>
+          </div>
+
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ======= Footer ======= -->
-  <footer class="footer py-4 bg-dark text-white text-center">
-    <div class="container">
-      <p>© 2025 <strong>BINI MDS</strong>. All Rights Reserved.</p>
-      <div class="social-links mt-3">
-        <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
-      </div>
+<!-- ======= Footer ======= -->
+<footer class="footer py-4 bg-dark text-white text-center">
+  <div class="container">
+    <p>© 2025 <strong>BINI MDS</strong>. All Rights Reserved.</p>
+    <div class="social-links mt-3">
+      <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
+      <a href="#" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" id="scroll-top"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
+<!-- Vendor JS -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
 
-  <!-- Navigation Toggle Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const mobileToggle = document.querySelector('.mobile-nav-toggle');
-      const navMenu = document.querySelector('.navmenu ul');
-      const body = document.body;
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileToggle = document.querySelector('.mobile-nav-toggle');
+  const navMenu = document.querySelector('.navmenu ul');
 
-      mobileToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('navmenu-active');
-        mobileToggle.classList.toggle('bi-list');
-        mobileToggle.classList.toggle('bi-x');
-        body.classList.toggle('nav-open');
-      });
-    });
-
-    AOS.init({ duration: 800, once: true });
-  </script>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const toggle = document.querySelector(".mobile-nav-toggle");
-    const menu = document.querySelector(".navmenu ul");
-
-    if (toggle && menu) {
-      toggle.addEventListener("click", function() {
-        menu.classList.toggle("show");
-      });
-    }
+  mobileToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    mobileToggle.classList.toggle('bi-list');
+    mobileToggle.classList.toggle('bi-x');
+    document.body.classList.toggle('nav-open');
   });
-  </script>
+
+  document.querySelectorAll('.navmenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+      mobileToggle.classList.remove('bi-x');
+      mobileToggle.classList.add('bi-list');
+      document.body.classList.remove('nav-open');
+    });
+  });
+
+  AOS.init({ duration: 800, once: true });
+});
+</script>
 
 </body>
 </html>
